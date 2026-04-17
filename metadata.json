@@ -1,0 +1,5 @@
+{
+  "name": "Quản lý Danh mục ĐTXD (Bảo mật)",
+  "description": "Ứng dụng quản lý danh mục hồ sơ ĐTXD với tính năng đăng nhập bảo mật qua Google Auth và phân quyền người dùng.",
+  "requestFramePermissions": []
+}
