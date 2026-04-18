@@ -4,16 +4,16 @@ import * as XLSX from 'xlsx';
 import { Settings, RefreshCw, FilePlus, Database, Download, ExternalLink, AlertCircle, X, ChevronDown, Eye, Lock, User as UserIcon, LogIn, LogOut, Filter } from 'lucide-react';
 import { EVN_HCMC_LOGO } from "./assets/logo";
 
-const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1B237SBdWeaQvc0GWH7hwcJI9ztiSxdBxXFbN4nBnxzU/export?format=csv&gid=0';
-const PROJECTS_CSV_URL = 'https://docs.google.com/spreadsheets/d/1B237SBdWeaQvc0GWH7hwcJI9ztiSxdBxXFbN4nBnxzU/export?format=csv&gid=1152018861'; // Using gid for 'Thông tin theo MCT' if known, or gviz. Let's use gviz to be safe.
-const PROJECTS_GVIZ_URL = 'https://docs.google.com/spreadsheets/d/1B237SBdWeaQvc0GWH7hwcJI9ztiSxdBxXFbN4nBnxzU/gviz/tq?tqx=out:csv&sheet=' + encodeURIComponent('Thông tin theo MCT');
-const USERS_GVIZ_URL = 'https://docs.google.com/spreadsheets/d/1B237SBdWeaQvc0GWH7hwcJI9ztiSxdBxXFbN4nBnxzU/gviz/tq?tqx=out:csv&sheet=' + encodeURIComponent('user');
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/14BF0RUfBq-Arl6ngVvD44fQnNayBEC1Xtz-RFgzA4GI/export?format=csv&gid=0';
+const PROJECTS_CSV_URL = 'https://docs.google.com/spreadsheets/d/14BF0RUfBq-Arl6ngVvD44fQnNayBEC1Xtz-RFgzA4GI/export?format=csv&gid=445176946'; // Using gid for 'Thông tin theo MCT' if known, or gviz. Let's use gviz to be safe.
+const PROJECTS_GVIZ_URL = 'https://docs.google.com/spreadsheets/d/14BF0RUfBq-Arl6ngVvD44fQnNayBEC1Xtz-RFgzA4GI/gviz/tq?tqx=out:csv&sheet=' + encodeURIComponent('Thông tin theo MCT');
+const USERS_GVIZ_URL = 'https://docs.google.com/spreadsheets/d/14BF0RUfBq-Arl6ngVvD44fQnNayBEC1Xtz-RFgzA4GI/gviz/tq?tqx=out:csv&sheet=' + encodeURIComponent('user');
 
 const PROXY_URL = `https://corsproxy.io/?${encodeURIComponent(SHEET_CSV_URL)}`;
 const PROJECTS_PROXY_URL = `https://corsproxy.io/?${encodeURIComponent(PROJECTS_GVIZ_URL)}`;
 const USERS_PROXY_URL = `https://corsproxy.io/?${encodeURIComponent(USERS_GVIZ_URL)}`;
 
-const DEFAULT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzM2LkJuvFJJDK6br3ZWlPELN1ZhXaglrnts173Zp_Oqxg5kHsLLuBoVtBGoujHoZhmig/exec';
+const DEFAULT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1X9iZX0ZWin-gB2ORtL-IkaCp8Px4WKaz4vV2ISr7jyuT9Wviuct0fR6sIJAs051n/exec';
 
 interface User {
   FullName: string;
@@ -285,7 +285,7 @@ export default function App() {
       (async () => {
         let htmlText = '';
         try {
-          const htmlUrl = 'https://docs.google.com/spreadsheets/d/1B237SBdWeaQvc0GWH7hwcJI9ztiSxdBxXFbN4nBnxzU/htmlview/sheet?headers=true&gid=0';
+          const htmlUrl = 'https://docs.google.com/spreadsheets/d/14BF0RUfBq-Arl6ngVvD44fQnNayBEC1Xtz-RFgzA4GI/htmlview/sheet?headers=true&gid=0';
           let htmlResponse;
           try {
             htmlResponse = await fetch(htmlUrl);
